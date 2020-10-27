@@ -117,7 +117,7 @@ MixxxLibraryFeature::MixxxLibraryFeature(Library* pLibrary,
     connect(m_pExportLibraryAction.get(),
             &QAction::triggered,
             this,
-            &MixxxLibraryFeature::slotExportLibrary);
+            &MixxxLibraryFeature::exportLibrary);
 #endif
 }
 
@@ -215,9 +215,5 @@ void MixxxLibraryFeature::onRightClick(const QPoint& globalPos) {
     QMenu menu(m_pSidebarWidget);
     menu.addAction(m_pExportLibraryAction.get());
     menu.exec(globalPos);
-}
-
-void MixxxLibraryFeature::slotExportLibrary() {
-    emit exportLibrary();
 }
 #endif
